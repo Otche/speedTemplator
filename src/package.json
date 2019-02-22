@@ -1,0 +1,27 @@
+{
+  "name": "src",
+  "version": "0.0.1",
+  "description": "create static compnent with native html / css and convert it in other document",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "nodemonConfig": {
+    "ext": "js,json,hbs,css,conf",
+    "ignore": [
+      ".git",
+      "./node_modules/**",
+      "./output/**"
+    ]
+  },
+  "keywords": [
+    "html5",
+    "css3",
+    "static",
+    "component",
+    "pdf",
+    "converter"
+  ],
+  "author": "Amine OUCHIHA",
+  "license": "ISC"
+}
