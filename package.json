@@ -4,7 +4,7 @@
   "description": "create static compnent with native html / css and convert it in other document",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "nodemonConfig": {
     "ext": "html,js,json,css,conf",
@@ -12,7 +12,11 @@
       ".git",
       "./node_modules/**",
       "./output/**"
-    ]
+    ],
+    "events": {
+        "restart": "npm test",
+        "start": "npm test"
+      }
   },
   "keywords": [
     "html5",
@@ -23,5 +27,8 @@
     "converter"
   ],
   "author": "Amine OUCHIHA",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.3.1"
+  }
 }
