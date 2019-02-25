@@ -14,10 +14,24 @@ let htmlCompiler = new HtmlCompiler(`<!DOCTYPE html>
       </body>
     </html>`);
 
-describe("html template processing and remplace with values", () => {
-    
-    it("template vars", () => {
-        const vars = htmlCompiler.findVarsInHtml();
-        expect(vars).toEqual(['var1','var2.subvar1']);
-    });
+describe("htmlCompiler : html template processing and remplace with values", () => {
+  
+  const vars = htmlCompiler.findVarsInHtml();
+  
+  it(" htmlCompiler.findVarsInHtml : template vars found", () => {
+    expect(vars).toEqual(['var1', 'var2.subvar1']);
+  });
+
+  it("HtmlCompiler.accessToValueWithArrayOfFloorValue : using array of json floor to acces to valus", () => {
+    const jsonTest = {floor1 : { floor2 : 0 }, floor2:'a' }
+    expect(HtmlCompiler.accessToValueWithArrayOfFloorValue(['floor1', 'floor2'], jsonTest)).toBe(0);
+    expect(HtmlCompiler.accessToValueWithArrayOfFloorValue(['floor2'], jsonTest)).toBe('a');
+    expect(HtmlCompiler.accessToValueWithArrayOfFloorValue(['floor2', 'floor2'], jsonTest)).toBeUndefined();
+  });
+
+  
+
+
+
+
 });
