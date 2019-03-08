@@ -45,10 +45,4 @@ describe("htmlCompiler : html template processing and remplace with values", () 
     });
     expect(templateResult).toEqual(compileResult);
   });
-
-
-
-
-
-
 });
