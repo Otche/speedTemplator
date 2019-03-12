@@ -1,7 +1,7 @@
 
 const utils = require('./utils');
 const HtmlCompiler = require('./HtmlCompiler').HtmlCompiler;
-const path = require('path');
+//const path = require('path');
 
 const appRootDir = () => {
     let dirPathArray = process.cwd().split('/');

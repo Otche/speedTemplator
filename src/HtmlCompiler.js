@@ -1,6 +1,6 @@
 const consts = require('./const');
 const fs = require('fs');
-
+const utils = require('./utils');
 const TXT_EXENTION = ['svg'];
 const BINARY_EXTENTION = ['png','jpg','jpeg','gif'];
 
@@ -20,9 +20,9 @@ exports.HtmlCompiler = class HtmlCompiler {
      * find template in variable
      */
     findVarsInHtml() {
-        return this.htmlTemplate
-                    .match(consts.TEMPLATE_REGEXP)
-                    .map(tmpVar => 
+        const mapOfVars = this.htmlTemplate.match(consts.TEMPLATE_REGEXP)
+        if(!mapOfVars) return;
+        return mapOfVars.map(tmpVar => 
                         tmpVar.substring(2, tmpVar.length - 2));
     }
 
@@ -58,27 +58,28 @@ exports.HtmlCompiler = class HtmlCompiler {
      * @param {*} fileRefConfig 
      */
     async compileFilesReferences(fileRefConfig){
-        const fileRefConfigKeys = Object.keys(fileRefConfig);
-        
-        await fileRefConfigKeys.forEach(async key => {
-            const fileURI = fileRefConfig[key];
-            const fileExt = val.split('.')[1];
+
+        return new Promise(async  (resolve, reject) => {
+            const fileRefConfigKeys = Object.keys(fileRefConfig);
             try {
-                const fileBin = await fs.readFile(fileURI)
-                if(TXT_EXENTION.includes(fileExt)){
-                    fileRefConfig[key] = fileBin.toString();
-                }else if(BINARY_EXTENTION.includes(fileExt)){
-                    fileRefConfig[key] = new Buffer(fileBin).toString('base64');
-                }
+                await fileRefConfigKeys.forEach(async ( key , index)=> {
+                    const fileURI = fileRefConfig[key];
+                    const fileExt = fileURI.split('.')[1];
+                    const fileBin = (await utils.readFile(fileURI))
+                    if(TXT_EXENTION.includes(fileExt)){
+                        fileRefConfig[key] = fileBin.toString();
+                    }else if(BINARY_EXTENTION.includes(fileExt)){
+                        fileRefConfig[key] = new Buffer(fileBin).toString('base64');
+                    }
+    
+                    if(index == fileRefConfigKeys.length - 1 ){
+                        this.compileSimpleValue(fileRefConfig);
+                        resolve(this.htmlTemplate);
+                    }
+                });      
             } catch (error) {
-                throw error;
+                reject(error);
             }
         });
-
-        this.compileSimpleValue(fileRefConfig);
-        return this.htmlTemplate; 
     }
-
-    
-
 }
