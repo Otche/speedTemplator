@@ -20,10 +20,11 @@ exports.HtmlCompiler = class HtmlCompiler {
      * find template in variable
      */
     findVarsInHtml() {
-        const mapOfVars = this.htmlTemplate.match(consts.TEMPLATE_REGEXP)
+        const mapOfVars = this.htmlTemplate.match(consts.TEMPLATE_REGEXP);
         if(!mapOfVars) return;
         return mapOfVars.map(tmpVar => 
-                        tmpVar.substring(2, tmpVar.length - 2));
+                        tmpVar.substring(2, 
+                            tmpVar.length - 2));
     }
 
     /**
@@ -33,8 +34,12 @@ exports.HtmlCompiler = class HtmlCompiler {
      */
     async compileTemplate(simpleValueConfig, fileRefConfig){
         this.compileSimpleValue(simpleValueConfig);
-        return this.htmlTemplate;
+        
+        return (await this.compileFilesReferences(fileRefConfig));
+    }
 
+    getTemplate(){
+        return this.htmlTemplate;
     }
 
 
@@ -45,6 +50,7 @@ exports.HtmlCompiler = class HtmlCompiler {
     compileSimpleValue(simpleValueConfig){
         const vars = this.findVarsInHtml();
         vars.forEach(_var => {
+            if(!simpleValueConfig[_var]) return;
             this.htmlTemplate = 
                 this.htmlTemplate.replace("{{"+_var+"}}", 
                     simpleValueConfig[_var]);
@@ -69,7 +75,7 @@ exports.HtmlCompiler = class HtmlCompiler {
                     if(TXT_EXENTION.includes(fileExt)){
                         fileRefConfig[key] = fileBin.toString();
                     }else if(BINARY_EXTENTION.includes(fileExt)){
-                        fileRefConfig[key] = new Buffer(fileBin).toString('base64');
+                        fileRefConfig[key] = "data:image/png;base64,"+(new Buffer(fileBin).toString('base64'));
                     }
     
                     if(index == fileRefConfigKeys.length - 1 ){
