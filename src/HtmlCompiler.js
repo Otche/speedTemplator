@@ -1,7 +1,7 @@
 const consts = require('./const');
 const fs = require('fs');
 const utils = require('./utils');
-const TXT_EXENTION = ['svg'];
+const TXT_EXENTION = ['svg','css'];
 const BINARY_EXTENTION = ['png','jpg','jpeg','gif'];
 
 /**
@@ -70,7 +70,7 @@ exports.HtmlCompiler = class HtmlCompiler {
             try {
                 await fileRefConfigKeys.forEach(async ( key , index)=> {
                     const fileURI = fileRefConfig[key];
-                    const fileExt = fileURI.split('.')[1];
+                    const fileExt = (fileURI.split('.')[1]).toLowerCase();
                     const fileBin = (await utils.readFile(fileURI))
                     if(TXT_EXENTION.includes(fileExt)){
                         fileRefConfig[key] = fileBin.toString();

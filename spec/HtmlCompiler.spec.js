@@ -47,7 +47,6 @@ const compileResult = `<!DOCTYPE html>
     </html>`;
 
 describe("htmlCompiler : html template processing and remplace with values", () => {
-
   const vars = htmlCompiler.findVarsInHtml();
 
   it("htmlCompiler.findVarsInHtml : template vars found", () => {
