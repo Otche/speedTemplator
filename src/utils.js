@@ -1,4 +1,5 @@
 const fs = require('fs');
+const puppeteer = require('puppeteer');
 
 exports.readFile = (async (_path, isabsolute) => {
     return new Promise((resolve, reject) => {
@@ -30,21 +31,19 @@ exports.writeFile = (async (_path, content) => {
  * @param {*} html 
  * @description convert html input to pdf using puppeteer
  */
-exports.convert = async (html, _path, name, format) => {
+exports.convertHtmlToPdf = async (html, _path, name, format) => {
     try {
-        const browser = await puppeteer.launch()
+        const browser = await puppeteer.launch();
         const page = await browser.newPage();
         await page.setContent(html);
         page.emulateMedia('screen');
         await page.pdf({
-            path: PDF_NAME,
-            format: PDF_FORMAT,
+            path: _path+name+'.pdf',
+            format: (format)? format : 'A4',
             printBackground: true
         });
         await browser.close();
-        console.log('done');
         process.exit();
-
     } catch (e) {
         console.log('our error', e);
     }
