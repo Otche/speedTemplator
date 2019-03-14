@@ -4,19 +4,20 @@
   "description": "create static compnent with native html / css and convert it in other document",
   "main": "src/index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "start" :"GEN_PDF=TRUE node src/index.js"
   },
   "nodemonConfig": {
-    "ext": "html,js,json,css,conf",
+    "ext": "html,js,json,css,conf,hbs",
     "ignore": [
       ".git",
       "./node_modules/**",
       "./output/**"
     ],
     "events": {
-        "restart": "npm test",
-        "start": "npm test"
-      }
+      "restart": "npm test",
+      "start": " npm test"
+    }
   },
   "keywords": [
     "html5",
@@ -30,5 +31,8 @@
   "license": "ISC",
   "devDependencies": {
     "jasmine": "^3.3.1"
+  },
+  "dependencies": {
+    "puppeteer": "^1.13.0"
   }
 }
