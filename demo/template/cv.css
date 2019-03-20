@@ -1,3 +1,60 @@
 body{
-    color: red;
+    width: 101%;
+    margin-top: -1px;
+    margin-left: -1px;
+}
+
+header
+{
+    display: flex;/*flex mode*/
+    flex-direction: row;
+    flex-wrap: wrap;/**return to line when line is full*/
+    width: 100%;
+    background-color: #58585A;
+    color: white;
+    border-bottom: solid #12B4E4 8px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+header aside {
+    width: 20%;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+span {
+    font-size: 15px;
+}
+
+
+header  section{
+    width: 65%;  
+}
+
+
+header section h4{
+    border-bottom: solid #12B4E4 3px;
+
+}
+
+.profile-photo{
+    border-radius: 100%;
+    border: solid #12B4E4 3px;
+}
+
+.body{
+    display: flex;/*flex mode*/
+    flex-direction: row;
+    flex-wrap: wrap;/**return to line when line is full*/
+}
+
+.body aside{
+    width: 31%;
+    background-color: #58585A;
+  
+}
+
+.body .main{
+    width: 69%;
+    background-color: red; 
 }
