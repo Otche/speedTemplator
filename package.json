@@ -8,7 +8,7 @@
     "start" :"GEN_PDF=TRUE node src/index.js"
   },
   "nodemonConfig": {
-    "ext": "html,js,json,css,conf,hbs",
+    "ext": "js,json,css,conf,hbs,svg",
     "ignore": [
       ".git",
       "./node_modules/**",

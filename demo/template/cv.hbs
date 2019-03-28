@@ -5,35 +5,69 @@
   <meta charset="utf-8">
   <title>CV Amine OUCHIHA</title>
   <style>
-     {{var.style}}
+    {{file.style}}
   </style>
   <!-- On peut avoir d'autres méta-données ici -->
 </head>
 
 <body>
-  <header>
+
+  <header class="cv-header">
     <aside>
-      <img class="profile-photo" src="{{var.img1}}" width="70%" height="80%" />
+      <img class="profile-photo" src="{{file.cvImg}}" 
+      width="90%" height="85%" />
     </aside>
     <section>
       <h1>Amine OUCHIHA <span>(26 ans)</span></h1>
       <h4>Consultant / Développeur full stack</h4>
       <p>
-        Consultant développeur chez Edifixio depuis trois ans, intervenant dans 
-        une multitude de projects avec un spectre technique et relationnel assez large.Je suis ouvert à de nouvelles opportunités en tant que consultant développeur 
+        Consultant développeur chez Edifixio depuis trois ans, intervenant dans
+        une multitude de projects avec un spectre technique et relationnel assez large.Je suis ouvert à de nouvelles
+        opportunités en tant que consultant développeur
         sur des thématiques téchnologique récente et porteuse.
       </p>
     </section>
   </header>
-  
-  <div class="body">
+
+  <main class="cv-body">
     <aside>
-      sqdsqf
+      <section class="contact-section">
+          <h3>Contact</h3>
+          <ul>
+            <li> {{file.localIcon}} 71 rue Andre sabatier, 92000, Nanterre.</li>
+          </ul>
+
+      </section>
+      
+      
+      
+      <header class="skills-section-header">
+        {{file.knowlegeIcon}}
+        <label> Programation </label>
+      </header>
+
+  
+
+      <section class="skills-container">
+        <section class="slider-container">
+          <label>competence 1</label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
+          </div>
+        </section>
+
+        <section class="slider-container">
+          <label>competence 2</label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
+          </div>
+        </section>
+      </section>
     </aside>
     <section class="main">
       dsfd
     </section>
-  </div>
+  </main>
 
 </body>
 
