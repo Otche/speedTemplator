@@ -13,7 +13,14 @@ const textTmplt = {"var.text1" : "test1"};
 const fileTmplt = {"file.cvImg" : `${APP_ROOT_DIR}/demo/assets/tr.png`,
 "file.style" : `${APP_ROOT_DIR}/demo/template/cv.css`,
 "file.knowlegeIcon" : `${APP_ROOT_DIR}/demo/assets/knowlege-3d.svg`,
-"file.localIcon" : `${APP_ROOT_DIR}/demo/assets/map-localization.svg`};
+"file.localIcon" : `${APP_ROOT_DIR}/demo/assets/map-localization.svg`,
+"file.workIcon" : `${APP_ROOT_DIR}/demo/assets/portfolio.svg`,
+"file.phoneIcon" : `${APP_ROOT_DIR}/demo/assets/mobile-phone.svg`,
+"file.emailIcon" : `${APP_ROOT_DIR}/demo/assets/at.svg`,
+"file.upArraw" : `${APP_ROOT_DIR}/demo/assets/long-arrow-pointing-up.svg`,
+"file.edifixio" : `${APP_ROOT_DIR}/demo/assets/edifixio.svg`
+};
+//
 
 
 
