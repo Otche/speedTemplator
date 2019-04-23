@@ -244,6 +244,15 @@ body{
     margin-top: 200px;
 }
 
+.prof-exp-section > .company-exp .company-inteval .company-name svg:nth-child(3)  {
+    margin-top: 500px;
+}
+
+.prof-exp-section > .company-exp .company-inteval .company-name svg:nth-child(4)  {
+    margin-top: 10px;
+}
+
+
 .prof-exp-section > .company-exp .company-inteval .time-arrow{
     width: 30%;
     display: flex;/*flex mode*/
@@ -400,9 +409,6 @@ body{
     display: table;
 }
 
-.formation-section > .company-exp .company-inteval .company-name svg:nth-child(2)  {
-    margin-top: 200px;
-}
 
 .formation-section > .company-exp .company-inteval .time-arrow{
     width: 30%;
