@@ -17,27 +17,27 @@ body{
 
 }
 
-.cv-header aside {
+.cv-header > aside {
     width: 25%;
     margin-top: 10px;
     margin-left: 10px;
 }
 
-.cv-header section h1{
+.cv-header > section  h1{
     font-size: 35px;
 }
 
-.cv-header section h4 {
+.cv-header > section h4 {
     font-size: 20px;
     font-style: italic;
 }
 
-.cv-header section p{
+.cv-header > section p{
     font-size: 18px;
     font-style: italic;
 }
 
-.cv-header section h1 span {
+.cv-header > section h1 span {
     font-size: 15px;
     font-style: italic;
 }
@@ -45,12 +45,12 @@ body{
 
 
 
-.cv-header  section{
+.cv-header > section{
     width: 70%;  
 }
 
 
-.cv-header section h4{
+.cv-header > section h4{
     border-bottom: solid #12B4E4 3px;
 
 }
@@ -64,19 +64,21 @@ body{
     display: flex;/*flex mode*/
     flex-direction: row;
     flex-wrap: wrap;/**return to line when line is full*/
+    margin-top: -1px;
 }
 
-.cv-body aside{
-    width: 26%;
+.cv-body > aside{
+    width: 30%;
     background-color: #58585A;
+    margin-top: -1px;
   
 }
 
-.cv-body .main{
+.cv-body > .main{
     display: flex;/*flex mode*/
     flex-direction: row;
     flex-wrap: wrap;/**return to line when line is full*/
-    width: 74%;
+    width: 70%;
     background-color: white; 
 }
 
@@ -88,12 +90,12 @@ body{
 }
 
 
-.slider-container .slider{
+.slider-container > .slider{
     background-color: #D9D8DD;
     height: 6px;
 }
 
-.slider-container .slider-fill{
+.slider-container  .slider-fill{
     background-color: #13B5E6;
     height: 6px;
 }
@@ -139,11 +141,12 @@ body{
     height: 200px;
     background-color: #12B4E4;
     color: white;
+    margin-top: -1px;
 
 }
 
 
-.cv-body aside .contact-section h3{
+.cv-body > aside .contact-section h3{
     margin: 0px;
     width: 60%;
     display: table;
@@ -156,49 +159,44 @@ body{
 }
 
 
-.cv-body aside .contact-section ul{
+.cv-body > aside .contact-section ul{
     list-style-type:none;
     padding: 0px;
 }
 
 
-.cv-body .main table{
-    width: 100%;
-    border-spacing: 0;
-    border-collapse: collapse;
-}
 
-.cv-body .main table .rigth-side{
+.cv-body > .main table .rigth-side{
     background-color: #D9D8DD;
 }
 
-.cv-body .main table tr.svg-container td.rigth-side{
+.cv-body > .main table tr.svg-container td.rigth-side{
     padding-bottom: 10px;
 }
 
-.cv-body .main table tr.svg-container td.rigth-side div svg{
+.cv-body > .main table tr.svg-container td.rigth-side div svg{
     margin: auto;
     display: table;
     margin-top: 10px;
     fill: #D9D8DE;
 }
 
-.prof-exp-section{
+.prof-exp-section,.formation-section{
     width: 100%;
 }
 
-.prof-exp-section .header{
+.prof-exp-section > .header{
     display: flex;/*flex mode*/
     flex-direction: row;
     flex-wrap: wrap;/**return to line when line is full*/
 }
 
-.prof-exp-section .header .left{
+.prof-exp-section > .header .left{
     background-color: #D9D8DD;
     width: 30%;
 }
 
-.prof-exp-section .header .left .icon{
+.prof-exp-section > .header .left .icon{
     background-color: #57575A;
     border-radius: 100%;
     margin: auto;
@@ -210,28 +208,24 @@ body{
     margin-bottom: 5px;
 }
 
-.prof-exp-section .header .left .icon svg{
+.prof-exp-section > .header .left .icon svg{
     fill: white;
 }
 
-.prof-exp-section .header .rigth{
+.prof-exp-section > .header .rigth{
     width: 67%;
     padding-left: 10px;
 }
 
-.prof-exp-section .header .rigth h4{
-    color: #58585A;
-}
-
-
-.prof-exp-section .company-exp{
+.prof-exp-section > .company-exp {
     display: flex;/*flex mode*/
     flex-direction: row;
     flex-wrap: wrap;/**return to line when line is full*/
+    margin-top: -1px;
     
 }
 
-.prof-exp-section .company-exp .company-inteval{
+.prof-exp-section > .company-exp .company-inteval{
     width: 10%;
     background-color: #D9D8DD;
     display: flex;/*flex mode*/
@@ -239,13 +233,18 @@ body{
     flex-wrap: wrap;/**return to line when line is full*/
 }
 
-.prof-exp-section .company-exp .company-inteval .company-name {
+.prof-exp-section > .company-exp .company-inteval .company-name {
     width: 60%;
     margin: auto;
+    margin-top: 200px;
     display: table;
 }
 
-.prof-exp-section .company-exp .company-inteval .time-arrow{
+.prof-exp-section > .company-exp .company-inteval .company-name svg:nth-child(2)  {
+    margin-top: 200px;
+}
+
+.prof-exp-section > .company-exp .company-inteval .time-arrow{
     width: 30%;
     display: flex;/*flex mode*/
     flex-direction: column;
@@ -254,7 +253,7 @@ body{
    
 }
 
-.prof-exp-section .company-exp .company-inteval .time-arrow .triangle {
+.prof-exp-section > .company-exp .company-inteval .time-arrow .triangle {
     width: 0;
     height: 0;
     border-top: 8px solid transparent;
@@ -264,19 +263,239 @@ body{
     display: table;
     margin-top: 0px;
     margin-bottom: 0px;
+    transform: rotate(270deg);
     -ms-transform: rotate(270deg); /* Internet Explorer */
     -moz-transform: rotate(270deg); /* Firefox */
     -webkit-transform: rotate(270deg); /* Safari et Chrome */
     -o-transform: rotate(270deg); /* Opera */
 }
 
-.prof-exp-section .company-exp .company-inteval .time-arrow .rectangle {
+.prof-exp-section > .company-exp .company-inteval .time-arrow .rectangle {
     width: 4px;
-    height: 90%;
+    height: 99%;
     background-color: white;
     margin: auto;
     display: table;
     margin-top: 0px;
     margin-bottom: 0px;
+}
 
+.prof-exp-section > .company-exp > .all-exp{
+   width: 90%; 
+   margin-left: -1px;
+}
+
+.prof-exp-section > .company-exp > .all-exp .exp{
+    display: flex;/*flex mode*/
+    flex-direction: row;
+    flex-wrap: wrap;/**return to line when line is full*/
+    color: #58585A;
+    margin-top: -1px;
+}
+
+.prof-exp-section > .company-exp > .all-exp .exp .date-container {
+    background-color: #D9D8DD;
+    width: 22.25%;
+    text-align: center;
+    margin: 0px; 
+    padding-top: 25px;
+}
+
+.prof-exp-section > .company-exp > .all-exp .exp .date-container h4{
+    display: table;
+}
+
+
+
+.prof-exp-section > .company-exp > .all-exp .exp .exp-container {
+   background-color: white;
+   padding-left: 10px;
+   padding-top: 40px;
+   width: 74%;
+}
+
+
+.prof-exp-section > .company-exp > .all-exp .exp .exp-container > h5{
+    margin: 0px;
+    margin-top: 5px;
+}
+
+.prof-exp-section > .company-exp > .all-exp .exp .exp-container > h5 span{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.prof-exp-section > .company-exp > .all-exp .exp .exp-container > ul{
+    margin: 0px;
+}
+
+.prof-exp-section > .company-exp > .all-exp .exp .exp-container > ul > li{
+    font-size: 12px;
+}
+
+.prof-exp-section > .company-exp > .all-exp .exp .exp-container p{
+    font-size: 12px;
+    margin: 0px;
+    margin-left: 10px;
+}
+
+
+
+
+
+
+.formation-section > .header{
+    display: flex;/*flex mode*/
+    flex-direction: row;
+    flex-wrap: wrap;/**return to line when line is full*/
+}
+
+.formation-section > .header .left{
+    background-color: #D9D8DD;
+    width: 30%;
+}
+
+.formation-section > .header .left .icon{
+    background-color: #57575A;
+    border-radius: 100%;
+    margin: auto;
+    display: table;
+    padding: 8px;
+    height: 40px;
+    width: 40px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+
+.formation-section > .header .left .icon svg{
+    fill: white;
+}
+
+.formation-section > .header .rigth{
+    width: 67%;
+    padding-left: 10px;
+    margin-top: 50px;
+}
+
+.formation-section > .company-exp {
+    display: flex;/*flex mode*/
+    flex-direction: row;
+    flex-wrap: wrap;/**return to line when line is full*/
+    margin-top: -1px;
+    
+}
+
+.formation-section > .company-exp .company-inteval{
+    width: 10%;
+    background-color: #D9D8DD;
+    display: flex;/*flex mode*/
+    flex-direction: row;
+    flex-wrap: wrap;/**return to line when line is full*/
+}
+
+.formation-section > .company-exp .company-inteval .company-name {
+    width: 60%;
+    margin: auto;
+    margin-top: 200px;
+    display: table;
+}
+
+.formation-section > .company-exp .company-inteval .company-name svg:nth-child(2)  {
+    margin-top: 200px;
+}
+
+.formation-section > .company-exp .company-inteval .time-arrow{
+    width: 30%;
+    display: flex;/*flex mode*/
+    flex-direction: column;
+    flex-wrap: wrap;/**return to line when line is full*/
+    padding: 2px;
+   
+}
+
+.formation-section > .company-exp .company-inteval .time-arrow .triangle {
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 18px solid white;
+    margin: auto;
+    display: table;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    transform: rotate(270deg);
+    -ms-transform: rotate(270deg); /* Internet Explorer */
+    -moz-transform: rotate(270deg); /* Firefox */
+    -webkit-transform: rotate(270deg); /* Safari et Chrome */
+    -o-transform: rotate(270deg); /* Opera */
+}
+
+.formation-section > .company-exp .company-inteval .time-arrow .rectangle {
+    width: 4px;
+    height: 99%;
+    background-color: white;
+    margin: auto;
+    display: table;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.formation-section > .company-exp > .all-exp{
+   width: 100%; 
+   margin-left: -1px;
+}
+
+.formation-section > .company-exp > .all-exp .exp{
+    display: flex;/*flex mode*/
+    flex-direction: row;
+    flex-wrap: wrap;/**return to line when line is full*/
+    color: #58585A;
+    margin-top: -1px;
+}
+
+.formation-section > .company-exp > .all-exp .exp .date-container {
+    background-color: #D9D8DD;
+    width: 30.2%;
+    text-align: center;
+    margin: 0px; 
+    padding-top: 35px;
+}
+
+.formation-section > .company-exp > .all-exp .exp .date-container h4{
+    display: table;
+    margin: auto;
+}
+
+
+
+.formation-section > .company-exp > .all-exp .exp .exp-container {
+   background-color: white;
+   padding-left: 10px;
+   padding-top: 25px;
+   width: 64%;
+}
+
+
+.formation-section > .company-exp > .all-exp .exp .exp-container > h5{
+    margin: 0px;
+    margin-top: 5px;
+}
+
+.formation-section > .company-exp > .all-exp .exp .exp-container > h5 span{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.formation-section > .company-exp > .all-exp .exp .exp-container > ul{
+    margin: 0px;
+}
+
+.formation-section > .company-exp > .all-exp .exp .exp-container > ul > li{
+    font-size: 12px;
+}
+
+.formation-section > .company-exp > .all-exp .exp .exp-container p{
+    font-size: 12px;
+    margin: 0px;
+    margin-left: 10px;
 }
