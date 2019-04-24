@@ -18,7 +18,15 @@ const fileTmplt = {"file.cvImg" : `${APP_ROOT_DIR}/demo/assets/tr.png`,
 "file.phoneIcon" : `${APP_ROOT_DIR}/demo/assets/mobile-phone.svg`,
 "file.emailIcon" : `${APP_ROOT_DIR}/demo/assets/at.svg`,
 "file.upArraw" : `${APP_ROOT_DIR}/demo/assets/long-arrow-pointing-up.svg`,
-"file.edifixio" : `${APP_ROOT_DIR}/demo/assets/edifixio.svg`
+"file.edifixio" : `${APP_ROOT_DIR}/demo/assets/edifixio.svg`,
+"file.graduation" : `${APP_ROOT_DIR}/demo/assets/college-graduation.svg`,
+"file.database" : `${APP_ROOT_DIR}/demo/assets/database.svg`,
+"file.mobile" : `${APP_ROOT_DIR}/demo/assets/mobile.svg`,
+"file.crm" : `${APP_ROOT_DIR}/demo/assets/crm.svg`,
+"file.screwdriver" : `${APP_ROOT_DIR}/demo/assets/screwdriver-and-wrench-crossed.svg`,
+"file.terminal" : `${APP_ROOT_DIR}/demo/assets/terminal.svg`,
+"file.dataanalytics" : `${APP_ROOT_DIR}/demo/assets/data-analytics-wheel-graphic.svg`,
+"file.english" : `${APP_ROOT_DIR}/demo/assets/english-language.svg`
 };
 //
 

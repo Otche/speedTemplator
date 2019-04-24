@@ -121,13 +121,16 @@ body{
     
 }
 
-.skills-section-header svg {
-    vertical-align: middle;
+.skills-section-header > div {
     background-color: white;
+    transform: translateY(-25%);
+    padding: 10px;
     border-radius: 100%;
-    transform: translateY(-20%);
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.skills-section-header > div > svg {
     fill: #13B5E6;
 }
 
