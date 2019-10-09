@@ -32,14 +32,25 @@ const fileTmplt = {"file.cvImg" : `${APP_ROOT_DIR}/demo/assets/tr.png`,
 
 
 
-async function index() {
+async function buildHtml() {
     let html = (await utils.readFile(`${APP_ROOT_DIR}/demo/template/cv.hbs`)).toString();
     let htmlCompiler = new HtmlCompiler(html);
     const htmlResult = (await htmlCompiler.compileTemplate(textTmplt,fileTmplt));
     await utils.writeFile(`${APP_ROOT_DIR}/output/cv.html`, htmlResult);
-    if(process.env.GEN_PDF){
-        utils.convertHtmlToPdf(htmlResult,`${APP_ROOT_DIR}/output/`, 'cv');
+}
+
+async function buildPDF() {
+    let html = (await utils.readFile(`${APP_ROOT_DIR}/output/cv.html`)).toString();
+    if(html){
+        await utils.convertHtmlToPdf(html,`${APP_ROOT_DIR}/output/`, 'cv');
     }
 }
 
-index();
+if(process.env.GEN_HTML){
+    buildHtml();
+}
+
+if(process.env.GEN_PDF){
+    buildPDF();
+}
+

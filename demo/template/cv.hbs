@@ -5,10 +5,556 @@
   <meta charset="utf-8">
   <title>CV Amine OUCHIHA</title>
   <style>
-    {{file.style}}
+    body {
+      width: 101%;
+      margin-top: -1px;
+      margin-left: -1px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .cv-header {
+      display: flex;
+      /*flex mode*/
+      flex-direction: row;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+      width: 100%;
+      background-color: #58585A;
+      color: white;
+      border-bottom: solid #12B4E4 8px;
+
+    }
+
+    .cv-header>aside {
+      width: 25%;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    .cv-header>section h1 {
+      font-size: 35px;
+    }
+
+    .cv-header>section h4 {
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    .cv-header>section p {
+      font-size: 18px;
+      font-style: italic;
+    }
+
+    .cv-header>section h1 span {
+      font-size: 15px;
+      font-style: italic;
+    }
+
+
+
+
+    .cv-header>section {
+      width: 70%;
+    }
+
+
+    .cv-header>section h4 {
+      border-bottom: solid #12B4E4 3px;
+
+    }
+
+    .profile-photo {
+      border-radius: 10%;
+      border: solid #12B4E4 3px;
+    }
+
+    .cv-body {
+      display: flex;
+      /*flex mode*/
+      flex-direction: row;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+      margin-top: -1px;
+    }
+
+    .cv-body>aside {
+      width: 30%;
+      background-color: #58585A;
+      margin-top: -1px;
+
+    }
+
+    .cv-body>.main {
+      display: flex;
+      /*flex mode*/
+      flex-direction: row;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+      width: 70%;
+      background-color: white;
+    }
+
+
+    .slider-container {
+      width: 80%;
+      margin-left: 15px;
+      margin-top: 10px;
+    }
+
+
+    .slider-container>.slider {
+      background-color: #D9D8DD;
+      height: 6px;
+    }
+
+    .slider-container .slider-fill {
+      background-color: #13B5E6;
+      height: 6px;
+    }
+
+    .slider-container label {
+      color: white;
+    }
+
+
+    .skills-container {
+      margin-top: 30px;
+
+    }
+
+    .skills-section-header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      margin-right: 10px;
+      background-color: white;
+      max-height: 30px;
+
+    }
+
+    .skills-section-header>div {
+      background-color: white;
+      transform: translateY(-25%);
+      padding: 10px;
+      border-radius: 100%;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .skills-section-header>div>svg {
+      fill: #13B5E6;
+    }
+
+    .skills-section-header label {
+      color: #13B5E6;
+      margin-top: 5px;
+    }
+
+    .cv-body .contact-section {
+      width: 100%;
+      height: 200px;
+      background-color: #12B4E4;
+      color: white;
+      margin-top: -1px;
+
+    }
+
+
+    .cv-body>aside .contact-section h3 {
+      margin: 0px;
+      width: 60%;
+      display: table;
+      margin: auto;
+      background: #58585A;
+      padding: 10px;
+      text-align: center;
+      border-radius: 20px;
+
+    }
+
+
+    .cv-body>aside .contact-section ul {
+      list-style-type: none;
+      padding: 0px;
+    }
+
+
+
+    .cv-body>.main table .rigth-side {
+      background-color: #D9D8DD;
+    }
+
+    .cv-body>.main table tr.svg-container td.rigth-side {
+      padding-bottom: 10px;
+    }
+
+    .cv-body>.main table tr.svg-container td.rigth-side div svg {
+      margin: auto;
+      display: table;
+      margin-top: 10px;
+      fill: #D9D8DE;
+    }
+
+    .prof-exp-section,
+    .formation-section {
+      width: 100%;
+    }
+
+    .prof-exp-section>.header {
+      display: flex;
+      /*flex mode*/
+      flex-direction: row;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+    }
+
+    .prof-exp-section>.header .left {
+      background-color: #D9D8DD;
+      width: 30%;
+    }
+
+    .prof-exp-section>.header .left .icon {
+      background-color: #57575A;
+      border-radius: 100%;
+      margin: auto;
+      display: table;
+      padding: 8px;
+      height: 40px;
+      width: 40px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .prof-exp-section>.header .left .icon svg {
+      fill: white;
+    }
+
+    .prof-exp-section>.header .rigth {
+      width: 67%;
+      padding-left: 10px;
+    }
+
+    .prof-exp-section>.company-exp {
+      display: flex;
+      /*flex mode*/
+      flex-direction: row;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+      margin-top: -1px;
+
+    }
+
+    .prof-exp-section>.company-exp .company-inteval {
+      width: 10%;
+      background-color: #D9D8DD;
+      display: flex;
+      /*flex mode*/
+      flex-direction: row;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+    }
+
+    .prof-exp-section>.company-exp .company-inteval .company-name {
+      width: 60%;
+      margin: auto;
+      margin-top: 200px;
+      display: table;
+    }
+
+    .prof-exp-section>.company-exp .company-inteval .company-name svg:nth-child(2) {
+      margin-top: 200px;
+    }
+
+    .prof-exp-section>.company-exp .company-inteval .company-name svg:nth-child(3) {
+      margin-top: 500px;
+    }
+
+    .prof-exp-section>.company-exp .company-inteval .company-name svg:nth-child(4) {
+      margin-top: 10px;
+    }
+
+
+    .prof-exp-section>.company-exp .company-inteval .time-arrow {
+      width: 30%;
+      display: flex;
+      /*flex mode*/
+      flex-direction: column;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+      padding: 2px;
+
+    }
+
+    .prof-exp-section>.company-exp .company-inteval .time-arrow .triangle {
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 18px solid white;
+      margin: auto;
+      display: table;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      /* Internet Explorer */
+      -moz-transform: rotate(270deg);
+      /* Firefox */
+      -webkit-transform: rotate(270deg);
+      /* Safari et Chrome */
+      -o-transform: rotate(270deg);
+      /* Opera */
+    }
+
+    .prof-exp-section>.company-exp .company-inteval .time-arrow .rectangle {
+      width: 4px;
+      height: 99%;
+      background-color: white;
+      margin: auto;
+      display: table;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .prof-exp-section>.company-exp>.all-exp {
+      width: 90%;
+      margin-left: -1px;
+    }
+
+    .prof-exp-section>.company-exp>.all-exp .exp {
+      display: flex;
+      /*flex mode*/
+      flex-direction: row;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+      color: #58585A;
+      margin-top: -1px;
+    }
+
+    .prof-exp-section>.company-exp>.all-exp .exp .date-container {
+      background-color: #D9D8DD;
+      width: 33.5%;
+      text-align: center;
+      margin: 0px;
+      padding-top: 25px;
+    }
+
+    .prof-exp-section>.company-exp>.all-exp .exp .date-container h4 {
+      display: table;
+      width: 100%;
+    }
+
+
+
+    .prof-exp-section>.company-exp>.all-exp .exp .exp-container {
+      background-color: white;
+      padding-left: 10px;
+      padding-top: 40px;
+      width: 64%;
+    }
+
+
+    .prof-exp-section>.company-exp>.all-exp .exp .exp-container>h5 {
+      margin: 0px;
+      margin-top: 5px;
+    }
+
+    .prof-exp-section>.company-exp>.all-exp .exp .exp-container>h5 span {
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    .prof-exp-section>.company-exp>.all-exp .exp .exp-container>ul {
+      margin: 0px;
+    }
+
+    .prof-exp-section>.company-exp>.all-exp .exp .exp-container>ul>li {
+      font-size: 12px;
+    }
+
+    .prof-exp-section>.company-exp>.all-exp .exp .exp-container p {
+      font-size: 12px;
+      margin: 0px;
+      margin-left: 10px;
+    }
+
+
+
+
+
+
+    .formation-section>.header {
+      display: flex;
+      /*flex mode*/
+      flex-direction: row;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+    }
+
+    .formation-section>.header .left {
+      background-color: #D9D8DD;
+      width: 30%;
+    }
+
+    .formation-section>.header .left .icon {
+      background-color: #57575A;
+      border-radius: 100%;
+      margin: auto;
+      display: table;
+      padding: 8px;
+      height: 40px;
+      width: 40px;
+      margin-top: 50px;
+      margin-bottom: 5px;
+    }
+
+    .formation-section>.header .left .icon svg {
+      fill: white;
+    }
+
+    .formation-section>.header .rigth {
+      width: 67%;
+      padding-left: 10px;
+      margin-top: 50px;
+    }
+
+    .formation-section>.company-exp {
+      display: flex;
+      /*flex mode*/
+      flex-direction: row;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+      margin-top: -1px;
+
+    }
+
+    .formation-section>.company-exp .company-inteval {
+      width: 10%;
+      background-color: #D9D8DD;
+      display: flex;
+      /*flex mode*/
+      flex-direction: row;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+    }
+
+    .formation-section>.company-exp .company-inteval .company-name {
+      width: 60%;
+      margin: auto;
+      margin-top: 200px;
+      display: table;
+    }
+
+
+    .formation-section>.company-exp .company-inteval .time-arrow {
+      width: 30%;
+      display: flex;
+      /*flex mode*/
+      flex-direction: column;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+      padding: 2px;
+
+    }
+
+    .formation-section>.company-exp .company-inteval .time-arrow .triangle {
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 18px solid white;
+      margin: auto;
+      display: table;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      /* Internet Explorer */
+      -moz-transform: rotate(270deg);
+      /* Firefox */
+      -webkit-transform: rotate(270deg);
+      /* Safari et Chrome */
+      -o-transform: rotate(270deg);
+      /* Opera */
+    }
+
+    .formation-section>.company-exp .company-inteval .time-arrow .rectangle {
+      width: 4px;
+      height: 99%;
+      background-color: white;
+      margin: auto;
+      display: table;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .formation-section>.company-exp>.all-exp {
+      width: 100%;
+      margin-left: -1px;
+    }
+
+    .formation-section>.company-exp>.all-exp .exp {
+      display: flex;
+      /*flex mode*/
+      flex-direction: row;
+      flex-wrap: wrap;
+      /**return to line when line is full*/
+      color: #58585A;
+      margin-top: -1px;
+    }
+
+    .formation-section>.company-exp>.all-exp .exp .date-container {
+      background-color: #D9D8DD;
+      width: 30.2%;
+      text-align: center;
+      margin: 0px;
+      padding-top: 35px;
+    }
+
+    .formation-section>.company-exp>.all-exp .exp .date-container h4 {
+      display: table;
+      margin: auto;
+    }
+
+
+
+    .formation-section>.company-exp>.all-exp .exp .exp-container {
+      background-color: white;
+      padding-left: 10px;
+      padding-top: 25px;
+      width: 64%;
+    }
+
+
+    .formation-section>.company-exp>.all-exp .exp .exp-container>h5 {
+      margin: 0px;
+      margin-top: 5px;
+    }
+
+    .formation-section>.company-exp>.all-exp .exp .exp-container>h5 span {
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    .formation-section>.company-exp>.all-exp .exp .exp-container>ul {
+      margin: 0px;
+    }
+
+    .formation-section>.company-exp>.all-exp .exp .exp-container>ul>li {
+      font-size: 12px;
+    }
+
+    .formation-section>.company-exp>.all-exp .exp .exp-container p {
+      font-size: 12px;
+      margin: 0px;
+      margin-left: 10px;
+    }
   </style>
   <!-- On peut avoir d'autres méta-données ici -->
 </head>
+
+
 
 <body>
 
@@ -17,14 +563,12 @@
       <img class="profile-photo" src="{{file.cvImg}}" width="90%" height="85%" />
     </aside>
     <section>
-      <h1>Amine OUCHIHA <span>(26 ans)</span></h1>
-      <h4>Consultant / LeadTech Full-Stack</h4>
+      <h1>Amine OUCHIHA <span>(27 ans)</span></h1>
+      <h4>Consultant développeur </h4>
       <p>
-        Consultant développeur chez Edifixio depuis trois ans et demi, et intervenant sur
-        une multitude de projets avec un spectre technique et relationnel large.
-        Je suis ouvert à de nouvelles opportunités en tant que consultant / leadTech,  
-        qui me pérmettra d'apporter mes conseils pour adopter les bon choix téchniques, ainsi que participer a 
-        la conception et l'implémentation d'applications innoventes.
+        Consultant développeur chez Edifixio depuis trois ans, je suis actuellement à la recherche d'une nouvelle opportunité en tant que Consultant développeur / tech-lead.
+        Mes expériences sur divers projets, couvrant un spectre technique et métier large m'ont permet d'avoir une vue globale sur divers écosystèmes informatique.
+        Je souhaiterais ainsi mettre à disposition mon expérience pour aider à adopter des bons et pérennes choix techniques dans la conception l'implémentation d'applications.
       </p>
     </section>
   </header>
@@ -38,111 +582,110 @@
           <li>{{file.phoneIcon}} <span>07.81.58.10.21</span></li>
           <li>{{file.emailIcon}} <span>ouchihaamine@gmail.com</span></li>
         </ul>
-
       </section>
 
 
 
-      <header class="skills-section-header" >
+      <header class="skills-section-header">
         <div> {{file.knowlegeIcon}}</div>
-        <label>DEV </label>
+        <label>DEV</label>
       </header>
 
-      <section class="skills-container" >
+      <section class="skills-container">
         <section class="slider-container">
           <label>JavaScript, TypeScript, NodeJs</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 90%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>Mocha, Jasmine, Jest</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 80%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>Type ORM</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 80%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>Java 8 SE, JEE</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 80%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>Junit, Mockito</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>Spring, Spring Boot</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
           </div>
         </section>
 
-         <section class="slider-container">
+        <section class="slider-container">
           <label>JPA / Hibernate</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>REST, SOAP</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 80%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
           </div>
         </section>
 
 
         <section class="slider-container">
-          <label>ReactJs, Redux </label>
+          <label>ReactJs</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>Angular</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
+          </div>
+        </section>
+
+        <section class="slider-container">
+          <label>Redux </label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>Salceforce Apex / Ligthning</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>SQL, PGSQL, PLSQL </label>
           <div class="slider">
-            <div class="slider-fill" style="width: 65%;">&nbsp;</div>
-          </div>
-        </section>
-
-        <section class="slider-container">
-          <label>C/C++, PHP</label>
-          <div class="slider">
             <div class="slider-fill" style="width: 60%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
-          <label>Scala, Python, Objective-C</label>
+          <label>C/C++, PHP, Scala, Python</label>
           <div class="slider">
             <div class="slider-fill" style="width: 40%;">&nbsp;</div>
           </div>
@@ -150,8 +693,8 @@
       </section>
 
 
-      <br/><br/><br/><br/><br/><br/>
-      <header class="skills-section-header" style="margin-top: -10px;" >
+      <br /><br /><br />
+      <header class="skills-section-header" style="margin-top: -10px;">
         <div> {{file.database}}</div>
         <label>Data Manage</label>
       </header>
@@ -160,45 +703,73 @@
         <section class="slider-container">
           <label>PostgreSQL, MySQL</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
           </div>
         </section>
 
-         <section class="slider-container">
+        <section class="slider-container">
           <label>Oracle</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>MongoDB</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
           </div>
         </section>
 
-         <section class="slider-container">
-          <label>ElasticSearch</label>
+        <section class="slider-container">
+          <label>(ELK) ElasticSearch, Logstash, Kibana</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 75%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>IBM MDM Infosphere</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
           </div>
         </section>
 
       </section>
 
-       <br/><br/>
-      <header class="skills-section-header" style="margin-top: -10px;" >
-       <div> {{file.mobile}}</div>
-        <label>Dev Mobile
-        </label>
+      <br /><br /><br />
+      <header class="skills-section-header" style="margin-top: -10px;">
+        <div> {{file.dataanalytics}}</div>
+        <label>Method - Conception</label>
+      </header>
+
+      <section class="skills-container">
+        <section class="slider-container">
+          <label> Scrum </label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
+          </div>
+        </section>
+
+        <!--<section class="slider-container">
+          <label> Jira </label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
+          </div>
+        </section>-->
+
+        <section class="slider-container">
+          <label> UML </label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
+          </div>
+        </section>
+      </section>
+
+      <br /><br /><br />
+      <header class="skills-section-header" style="margin-top: -10px;">
+        <div> {{file.mobile}}</div>
+        <label>Dev Mobile</label>
       </header>
 
       <section class="skills-container">
@@ -206,25 +777,32 @@
         <section class="slider-container">
           <label>Android</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>Cordova, Ionic</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 75%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
           </div>
         </section>
 
-         <section class="slider-container">
+        <section class="slider-container">
           <label>React Native</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 80%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
           </div>
         </section>
 
-         <section class="slider-container">
+        <section class="slider-container">
+          <label>Native Script</label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
+          </div>
+        </section>
+
+        <section class="slider-container">
           <label>IOS</label>
           <div class="slider">
             <div class="slider-fill" style="width: 30%;">&nbsp;</div>
@@ -234,8 +812,8 @@
       </section>
 
 
-       <br/><br/>
-      <header class="skills-section-header" style="margin-top: -10px;" >
+      <br /><br /><br />
+      <header class="skills-section-header" style="margin-top: -10px;">
         <div> {{file.crm}}</div>
         <label>CMS / CRM
         </label>
@@ -246,29 +824,31 @@
         <section class="slider-container">
           <label>Salesforce</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
+          </div>
+        </section>
+
+        <section class="slider-container">
+          <label>Jalios CMS</label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>Drupal</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
           </div>
         </section>
 
-         <section class="slider-container">
-          <label>Jalios CMS</label>
-          <div class="slider">
-            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
-          </div>
-        </section>
+
 
       </section>
-      
 
-        <br/><br/>
-      <header class="skills-section-header" style="margin-top: -10px;" >
+
+      <br /><br /><br />
+      <header class="skills-section-header" style="margin-top: -10px;">
         <div> {{file.screwdriver}}</div>
         <label>Dev Tools
         </label>
@@ -277,28 +857,21 @@
       <section class="skills-container">
 
         <section class="slider-container">
+          <label>Maven, Gradle, Ant</label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
+          </div>
+        </section>
+
+        <section class="slider-container">
+          <label>Git </label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
+          </div>
+        </section>
+
+        <section class="slider-container">
           <label>Elipse IDE, IntelliJ IDE</label>
-          <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
-          </div>
-        </section>
-
-        <section class="slider-container">
-          <label>Git</label>
-          <div class="slider">
-            <div class="slider-fill" style="width: 80%;">&nbsp;</div>
-          </div>
-        </section>
-
-         <section class="slider-container">
-          <label>Maven, Gradle</label>
-          <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
-          </div>
-        </section>
-
-        <section class="slider-container">
-          <label>Ant</label>
           <div class="slider">
             <div class="slider-fill" style="width: 60%;">&nbsp;</div>
           </div>
@@ -307,17 +880,17 @@
         <section class="slider-container">
           <label>VSCode</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
           </div>
         </section>
 
       </section>
-      
-      
-      
-      <br/><br/>
-      <header class="skills-section-header" style="margin-top: -10px;" >
-       <div> {{file.terminal}}</div>
+
+
+
+      <br /><br /><br />
+      <header class="skills-section-header" style="margin-top: -10px;">
+        <div> {{file.terminal}}</div>
         <label>Dev Ops</label>
       </header>
 
@@ -325,21 +898,21 @@
         <section class="slider-container">
           <label>Linux, Shell</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
-          </div>
-        </section>
-
-         <section class="slider-container">
-          <label>Heroku PaaS</label>
-          <div class="slider">
-            <div class="slider-fill" style="width: 80%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
-          <label>SSO, Token, Comunication sécurisé</label>
+          <label>Heroku PaaS</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
+          </div>
+        </section>
+
+        <section class="slider-container">
+          <label>SSO</label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
           </div>
         </section>
 
@@ -347,19 +920,26 @@
         <section class="slider-container">
           <label>E-commerce, E-paiment </label>
           <div class="slider">
-            <div class="slider-fill" style="width: 75%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
           </div>
         </section>
 
         <section class="slider-container">
           <label>Amazon AWS</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 50%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
           </div>
         </section>
 
-         <section class="slider-container">
-          <label>Docker, Jekins</label>
+        <section class="slider-container">
+          <label>Docker</label>
+          <div class="slider">
+            <div class="slider-fill" style="width: 40%;">&nbsp;</div>
+          </div>
+        </section>
+
+        <section class="slider-container">
+          <label>Jekins</label>
           <div class="slider">
             <div class="slider-fill" style="width: 50%;">&nbsp;</div>
           </div>
@@ -367,8 +947,8 @@
 
       </section>
 
-      <br/><br/>
-      <header class="skills-section-header" style="margin-top: -10px;" >
+
+      <header class="skills-section-header">
         <div> {{file.dataanalytics}}</div>
         <label>Data Integration</label>
       </header>
@@ -377,21 +957,15 @@
         <section class="slider-container">
           <label>Talend ETL</label>
           <div class="slider">
-            <div class="slider-fill" style="width: 80%;">&nbsp;</div>
-          </div>
-        </section>
-
-         <section class="slider-container">
-          <label>Logstash</label>
-          <div class="slider">
-            <div class="slider-fill" style="width: 70%;">&nbsp;</div>
+            <div class="slider-fill" style="width: 60%;">&nbsp;</div>
           </div>
         </section>
 
       </section>
-
-      <br/><br/> <br/>
-      <header class="skills-section-header" style="margin-top: -10px;" >
+      <ul style="color:#58585A ">
+        <li></li>
+      </ul>
+      <header class="skills-section-header" style="margin-top: 50px;">
         <div> {{file.english}}</div>
         <label>Anglais</label>
       </header>
@@ -411,7 +985,7 @@
           </div>
         </section>
 
-         <section class="slider-container">
+        <section class="slider-container">
           <label>Ecrit</label>
           <div class="slider">
             <div class="slider-fill" style="width: 80%;">&nbsp;</div>
@@ -419,7 +993,7 @@
         </section>
 
       </section>
-      
+
     </aside>
 
 
@@ -436,20 +1010,16 @@
           </div>
         </div>
 
-        <section class="company-exp">
-          <div class="company-inteval">
-            <div class="company-name">
-              {{file.edifixio}}
-              {{file.edifixio}}
-              {{file.edifixio}}
-              {{file.edifixio}}  
-            </div>
-            <div class="time-arrow">
-              <div class="triangle"></div>
-              <div class="rectangle"></div>
-            </div>
-
+        <div class="header">
+          <div class="left">
           </div>
+          <div class="rigth">
+            <h3 style="text-align: center">Entreprise : EDIFIXIO</h3>
+            <h3 style="text-align: center">(Mai 2015 à aujourd'hui) </h3>
+          </div>
+        </div>
+
+        <section class="company-exp">
           <div class="all-exp">
 
             <div class="exp">
@@ -460,21 +1030,21 @@
 
               </aside>
               <article class="exp-container">
-                <h5>Projet : référentiel produit Carrefour.</h5>
+                <h5>Projet : Référentiel produit Carrefour.</h5>
                 <h5>Client : Carrefour.</h5>
                 <h5>Environnement technique :<span> IBM MDM Infosphere, Java 8, Linux.</span></h5>
                 <h5>Contexte :</h5>
-                <p>Pour le compte l'entreprise Carrefour,
-                  et dans le projet référentiel de données Carrefour qui se bas sur la solution
-                  IBM MDM, et dans une équipe d'une dizaine de personne, je suis intervenue en tant que consultant
-                  développeur
-                  Java sur la solution.</p>
+                <p>Pour le compte de l'entreprise Carrefour,
+                  et dans un projet référentiel de données Carrefour qui se base sur la solution
+                  IBM MDM, je suis intervenue dans une équipe de six personnes de personne en tant que consultant
+                  développeur Java sur la solution.</p>
                 <h5>Missions / Interventions : </h5>
                 <ul>
                   <li>Mise en place de script TrigoScript pour import/ export de données.</li>
                   <li>Étude et Réécriture de routine d'import / export Java dans le but d'optimiser les performances.
                   </li>
                   <li>Réalisation d'une documentation sur l'architecture applicative et de déploiement du projet.</li>
+                  <li>Participation à la mise en place du référentiel non alimentaire de Carrefour.</li>
                 </ul>
               </article>
             </div>
@@ -489,10 +1059,10 @@
                 <h5>Projet : POC Intentionality.</h5>
                 <h5>Client : Interne Edifixio.</h5>
                 <h5>Environnement technique :
-                  <span>ReactJs, Redux, IBM Bluemix, composant Bootstrap.</span></h5>
+                  <span>ReactJs, Redux, IBM Bluemix, Composants Bootstrap.</span></h5>
                 <h5>Contexte :</h5>
                 <p>Dans un projet en interne de création d'un IA pour la prédiction d'impact sur les réseaux sociaux,
-                  j'ai participé a la réalisation du front de l'application au sein d'une équipe de quatre personnes.
+                  j'ai participé à la réalisation du front de l'application au sein d'une équipe de quatre personnes.
                 </p>
                 <h5>Missions / Intervention :</h5>
                 <ul>
@@ -510,20 +1080,20 @@
                 </h4>
               </aside>
               <article class="exp-container">
-                <h5>Projet : Application Mobile Avec React Native et Salesforce Mobile SDK (CXO).</h5>
+                <h5>Projet : Application React Native / Salesforce (CXO).</h5>
                 <h5>Client : Salesforce.</h5>
                 <h5>Environnement technique :
                   <span>React Native, Salesforce, Apex, Push notification, Jest.</span> </h5>
                 <h5>Context :</h5>
-                <p>Pour le compte d'un projet pilote en partenariat avec Salesforce, j'ai participé a la réalisation
-                  et on maintient de ertaines fonctionnalités d'un réseau sociale d'entreprise
-                  avec SDK Mobile de Salesforce en utilisant ReactNative, au sein d'une équipe de quatre personnes.</p>
+                <p>Pour le compte d'un projet pilote en partenariat avec Salesforce, j'ai participé à la réalisation
+                  et à la maintenance de certaines fonctionnalités d'un réseau sociale d'entreprise
+                  au sein d'une équipe de quatre personnes.</p>
                 <h5>Missions / Intervention :</h5>
                 <ul>
-                  <li>Migration de service React native coté Back (APEX) pour réduire le nombre d'appels intermédiaire
-                    serveur et amélioré les performances.</li>
+                  <li>Migration des services React native coté Back (APEX) pour réduire le nombre d'appels intermédiaire
+                    serveur et ainsi amelioré les performances.</li>
                   <li>Test Unitaire de service (Code Covrage Salesforce).</li>
-                  <li>Push notification et création des trigguer APEX pour les interceptées.</li>
+                  <li>Push notification et création des trigguers APEX pour les interceptées.</li>
                   <li>Teste de rendering des composant ReactNative avec Jest et Enzyme.</li>
                   <li>Réalisation de Mock pourl'envirenement test avec Jest.</li>
                 </ul>
@@ -540,14 +1110,14 @@
               <article class="exp-container">
                 <h5>Projet : Plateforme de dépannage en ligne. </h5>
                 <h5>Client : Inter Mutuelle Assurance (IMA).</h5>
-                <h5>Environnement technique : <span>NodeJs, TypeScript, Angular, AngularJs, Gulp
+                <h5>Environnement technique : <span>NodeJs, TypeScript, Angular, AngularJs, Gulp,
                     Heroku Paas, add-on Heroku, Pipe Heroku, PostgreSQL, Mocha, Salesforce, Talend ETL,
                     platforme de paiment Sogenactif.</span></h5>
                 <h5>Contexte :</h5>
-                <p>Pour le compte de l'inter mutuelle assurance (IMA) basé a Niort, on a réalisé
+                <p>Pour le compte de l'Inter Mutuelle Assurance (IMA) basée à Niort, on a réaliser
                   une application de dépannage en ligne qui est repartie en deux volets,
-                  l'automobile et l'habitation, sur ce projet, j'été développeur et tech-lead après
-                  la croissance de l'équipe du projet qui est passé de 3 personnes a 9 personnes. </p>
+                  l'automobile et l'habitation. Sur ce projet, j'été développeur et tech-lead après
+                  la croissance de l'équipe du projet, qui est passé de 3 personnes a 9 personnes. </p>
                 <h5>Missions / Intervention :</h5>
                 <ul>
                   <li>Conception des services web.</li>
@@ -570,11 +1140,11 @@
                 </h4>
               </aside>
               <article class="exp-container">
-                <h5>Projet : POC Moteur de rechérche full sur les email (pieces joint inclus). </h5>
+                <h5>Projet : POC Moteur de rechérche sur comptes email. </h5>
                 <h5>Client : Interne Edifixio</h5>
                 <h5>Environement technique : <span>AngularJs, ElasticSearch, Logstach.</span></h5>
                 <h5>Context :</h5>
-                <p> Pour une application en interne, j'ai réalisé une application moteur de recherche sue un ensemble
+                <p> Pour une application en interne, j'ai réalisé une application moteur de recherche sur un ensemble
                   configurable de boite e-mail.
                   Cette application permet la recherche sur les contenus et les pièces jointe des adresses mail
                   configurer, j'ai aussi réalisé une UI de démonstration qui présente les
@@ -586,7 +1156,7 @@
                   <li>Installation du plugin logstach pour piper les donner du protocole POP et IMAP.</li>
                   <li>Mise en place de la communication entre logstach et ElasticSearch pour l'indexation des données.
                   </li>
-                  <li>Développement d’une UI avec AngularJs pour interagir avec les résultats de recherche.</li>
+                  <li>Développement d’une UI avec AngularJs pour interagir avec les résultats d'une recherche.</li>
                 </ul>
               </article>
             </div>
@@ -598,15 +1168,16 @@
                 </h4>
               </aside>
               <article class="exp-container">
-                <h5>Projet : Application web et plateforme collaborative Jalios CMS </h5>
+                <h5>Projet : Plateforme web et collaborative Jalios CMS.</h5>
                 <h5>Client : COFREND</h5>
                 <h5>Environement technique : <span> Jalios - Java JEE - JavaScript - JQuery.</span></h5>
                 <h5>Context :</h5>
-                <p>Pour Le compte du confédération française des teste non destructif, j'ai participer a la realisation
-                  d'une application web collaboratif, au sein d'un equipe de 3 personne.
+                <p>Pour le compte de la Confédération Française pour les Essais Non Destructifs (Cofrend), et au sein
+                  d'une equipe de 3 personne, j'ai participé à la realisation
+                  d'une application web collaborative.
                   Cette application permet au professionnel de s'inscrire, de créer du contenu et de la documentation ,
-                  de s'inscrire a des examens de certification et de paiement en ligne,
-                  ainsi que d'exposer un contenu vitrine pour les utilisateurs non inscrit.
+                  et au public
+                  de s'inscrire à des examens de certification ainsi que de faire le paiement en ligne.
                 </p>
                 <h5>Missions / Intervention :</h5>
                 <ul>
@@ -614,7 +1185,7 @@
                   <li>Création de types des formulaires et gestion des règles métier.</li>
                   <li>Création des pages portails et gestion de la navigation dans le site.</li>
                   <li>Interfaçage avec un service de paiement en ligne sécurisé (avec la solution Monitico).</li>
-                  <li>Interfaçage avec un logiciel de comptabilité par export de fichier.</li>
+                  <li>Interfaçage avec un logiciel de comptabilité pour l'export de fichier.</li>
                 </ul>
               </article>
             </div>
@@ -626,7 +1197,7 @@
                 </h4>
               </aside>
               <article class="exp-container">
-                <h5>Projet : Couche de services de recherche basée sur ElasticSearch </h5>
+                <h5>Projet : Couche de services ElasticSearch. </h5>
                 <h5>Client : Stage de fin d'étude (Edifxio)</h5>
                 <h5>Environement technique : <span> Java JEE - Spring (Core, MVC, AOP) - ElasticSearch.</span></h5>
                 <h5>Context :</h5>
@@ -638,9 +1209,9 @@
                 <h5>Missions / Intervention :</h5>
                 <ul>
                   <li>Étude de l’état de l’art sur les moteurs de recherche.</li>
-                  <li>Conception et réalisation d'une API configurable pour simplifier la réalisation d'applications
-                    utilisant ElasticSearch en Java.</li>
-                  <li>Développement d’un prototype web en Java JEE.</li>
+                  <li>Conception et réalisation d'une API configurable pour simplifier la réalisation d'applications 
+                    utilisant des facette sur ElasticSearch en Java.</li>
+                  <li style="color: white"></li>
                 </ul>
               </article>
             </div>
@@ -649,7 +1220,8 @@
         </section>
       </section>
 
-      <section class="formation-section" >
+
+      <section class="formation-section">
 
         <div class="header">
           <div class="left">
@@ -696,8 +1268,6 @@
                 <h4>
                   2013
                 </h4>
-                <br /><br /><br /><br /><br /><br /><br /><br />
-                <br /><br /><br /><br /><br /><br /><br /><br />
                 <br /><br />
               </aside>
               <article class="exp-container">

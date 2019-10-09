@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jasmine",
-    "start" :"GEN_PDF=TRUE node src/index.js"
+    "buildHtml" : "GEN_HTML=TRUE node src/index.js",
+    "buildPDF": "wkhtmltopdf ./output/cv.html ./output/cv.pdf "
   },
   "nodemonConfig": {
     "ext": "js,json,css,conf,hbs,svg",
@@ -30,9 +31,9 @@
   "author": "Amine OUCHIHA",
   "license": "ISC",
   "devDependencies": {
-    "jasmine": "^3.3.1"
+    "jasmine": "3.3.1"
   },
   "dependencies": {
-    "puppeteer": "^1.13.0"
+    "puppeteer": "1.13.0"
   }
 }
